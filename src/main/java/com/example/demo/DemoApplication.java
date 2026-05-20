@@ -14,6 +14,6 @@ public class DemoApplication {
 
     @GetMapping("/")
     public String home() {
-        return "Hello from Earth. Its a beautiful day 🚀";
+git         return "Hello from Earth. Its a beautiful day 🚀";
     }
 }
