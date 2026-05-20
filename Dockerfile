@@ -1,5 +1,5 @@
 
-FROM openjdk:27-ea
+FROM openjdk:27-ea-trixie
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y openssl && \
