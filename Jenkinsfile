@@ -38,11 +38,9 @@ pipeline{
         stage('Deploy'){
             steps{
                steps {
-                bat '''
-                docker stop spring-container || true
-                docker rm spring-container || true
-                docker run -d -p 8080:8080 --name spring-container %DOCKER_IMAGE%:${version}"
-                '''
+                bat 'docker stop spring-container || true'
+                bat 'docker rm spring-container || true'
+                bat "docker run -d -p 8080:8080 --name spring-container %DOCKER_IMAGE%:${version}"
             }
         }
     }
