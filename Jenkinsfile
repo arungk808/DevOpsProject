@@ -36,7 +36,7 @@ pipeline{
                     bat "docker rmi %DOCKER_IMAGE%:latest"
                     for (int i = 1; i < currentbuild - 1; i++) {
                         def oldVersion = "v.${i}"
-                        bat "docker rmi %DOCKER_IMAGE%:${oldVersion} || true"
+                        bat "docker rmi %DOCKER_IMAGE%:${oldVersion} || exit 0"
                     }
                 }
             }
