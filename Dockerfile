@@ -1,5 +1,4 @@
-
-FROM openjdk:27-ea-21-slim
+FROM eclipse-temurin:21.0.11_10-jre-jammy
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y openssl && \
