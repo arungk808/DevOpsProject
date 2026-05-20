@@ -37,6 +37,7 @@ pipeline{
                     for (int i = 1; i < currentbuild - 1; i++) {
                         def oldVersion = "v.${i}"
                         bat "docker rmi %DOCKER_IMAGE%:${oldVersion} || exit 0"
+                        echo "Removed old Docker image: %DOCKER_IMAGE%:${oldVersion}"
                     }
                 }
             }
