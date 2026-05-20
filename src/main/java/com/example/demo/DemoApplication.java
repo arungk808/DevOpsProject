@@ -14,6 +14,10 @@ public class DemoApplication {
 
     @GetMapping("/")
     public String home() {
+<<<<<<< HEAD
         return "Hello from Arun 🚀";
+=======
+        return "Hello from Earth. Its a beautiful day 🚀";
+>>>>>>> 604c4bf0f4fe9fd476894898db71e1316a519d5e
     }
 }
