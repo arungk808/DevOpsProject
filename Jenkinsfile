@@ -31,7 +31,7 @@ pipeline{
             steps {
                 script {
                     def version = "v.$BUILD_NUMBER"
-                    bat "docker tag %DOCKER_IMAGE%:${version}"
+                    bat "docker tag %DOCKER_IMAGE%:latest %DOCKER_IMAGE%:${version}"
                 }
             }
         }
