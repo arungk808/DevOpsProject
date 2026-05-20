@@ -31,7 +31,13 @@ pipeline{
             steps {
                 script {
                     def version = "v.$BUILD_NUMBER"
+                    def currentbuild = BUILD_NUMBER.toInteger()
                     bat "docker tag %DOCKER_IMAGE%:latest %DOCKER_IMAGE%:${version}"
+                    bat "docker rmi %DOCKER_IMAGE%:latest"
+                    for (int i = 1; i < currentbuild - 1; i++) {
+                        def oldVersion = "v.${i}"
+                        bat "docker rmi %DOCKER_IMAGE%:${oldVersion} || true"
+                    }
                 }
             }
         }
