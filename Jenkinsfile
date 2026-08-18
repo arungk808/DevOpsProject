@@ -48,7 +48,7 @@ pipeline{
                     def version = "v.$BUILD_NUMBER"
                     bat 'docker stop spring-container || true'
                     bat 'docker rm spring-container || true'
-                    bat "docker run -d -p 8080:8080 --name spring-container %DOCKER_IMAGE%:${version}"
+                    bat "docker run -d -p 8080:8080 --name spring-container %DOCKER_IMAGE%:${version}"                   
                 }
             }
         }

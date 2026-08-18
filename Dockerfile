@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21.0.11_10-jre-jammy
+FROM eclipse-temurin:25-jre-jammy
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y openssl && \
